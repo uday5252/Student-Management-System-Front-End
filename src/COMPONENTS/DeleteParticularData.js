@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import Axios from "axios"
-import { set } from 'mongoose'
+import { SERVER_ACCESS_URL } from '../constans'
 
 function DeleteParticularData() 
 {
@@ -10,7 +10,7 @@ function DeleteParticularData()
     //Logic to extract the rollNo
     const { id } = useParams()
     
-    Axios.delete(`https://sms-backendd-863i.onrender.com/delete/data/${id}`)
+    Axios.delete(`${SERVER_ACCESS_URL}/delete/data/${id}`)
     .then(function(output)
     {
         setMessage(output.data)

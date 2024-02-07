@@ -2,6 +2,7 @@ import React from 'react'
 import Axios from "axios"
 import { Link, Outlet, Route, Routes } from 'react-router-dom'
 import ReadParticularData from './ReadParticularData'
+import { SERVER_ACCESS_URL } from '../constans'
 
 function ReadStudentData() 
 {
@@ -13,7 +14,7 @@ function ReadStudentData()
     React.useEffect(function()
     {
         //Axios to make an api call to the server
-        Axios.get("https://sms-backendd-863i.onrender.com/read").then(function(output)
+        Axios.get(`${SERVER_ACCESS_URL}/read`).then(function(output)
         {
             setCompleteReadData(output.data)
         }).catch(function(error)
@@ -58,3 +59,10 @@ function ReadStudentData()
 }
 
 export default ReadStudentData
+
+
+// http://localhost:9000(Back End Appn) --> My Compuer 
+// I was able 
+
+
+// https://student-management-system-back-end.onrender.com(Back end Appn) --> Computer(Virtual / Live in the internet)
